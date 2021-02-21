@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function App() {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => axios.post("https://gucportalguc.herokuapp.com/addLocation",{
+  const onSubmit = (data) => axios.post("https://gucportalguc.herokuapp.com/HR/addFaculty",{
     headers : {
       auth_token : localStorage.getItem('auth_token')
     }
@@ -13,7 +13,7 @@ export default function App() {
     data
   }
 }).then(res =>{
-      alert("Course Added Successfully")
+      alert("Faculty Added Successfully")
       alert(JSON.stringify(data));
       console.log(data)
   })

@@ -27,7 +27,7 @@ export default function BasicTable() {
   const [ready, setReady] = useState(false);
 
   useEffect(async () => {
-    const LocationRes = axios.get("https://gucportalguc.herokuapp.com/getStaffMembers", {
+    const LocationRes = axios.get("https://gucportalguc.herokuapp.com/HR/getStaffMembers", {
       headers : {
         'auth_token' : localStorage.getItem('auth_token')
       }
@@ -43,7 +43,7 @@ export default function BasicTable() {
   },[])
 
   const handleClickDelete = async(id) => {
-    const response = await axios.delete(`https://gucportalguc.herokuapp.com/opStaffMemeber/${id}`,{
+    const response = await axios.delete(`https://gucportalguc.herokuapp.com/HR/opStaffMemeber/${id}`,{
         headers : {
             auth_token : localStorage.getItem('auth_token')
         },
@@ -52,7 +52,7 @@ export default function BasicTable() {
 }
 
 const handleClickUpdate = async(id) => {
-    const response = await axios.post(`https://gucportalguc.herokuapp.com/opStaffMemeber/${id}`,{
+    const response = await axios.post(`https://gucportalguc.herokuapp.com/HR/opStaffMemeber/${id}`,{
         headers : {
             auth_token : localStorage.getItem('auth_token')
         },
